@@ -9,6 +9,7 @@
       "Courier New", monospace;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --container-3xl: 48rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -188,6 +189,15 @@
   .row-span-3 {
     grid-row: span 3 / span 3;
   }
+  .m-\[0\,auto\,30px\,auto\] {
+    margin: 0,auto,30px,auto;
+  }
+  .m-\[0_auto_30px_auto\] {
+    margin: 0 auto 30px auto;
+  }
+  .m-auto {
+    margin: auto;
+  }
   .block {
     display: block;
   }
@@ -200,11 +210,29 @@
   .table {
     display: table;
   }
+  .max-w-3xl {
+    max-width: var(--container-3xl);
+  }
+  .max-w-25 {
+    max-width: calc(var(--spacing) * 25);
+  }
+  .max-w-45 {
+    max-width: calc(var(--spacing) * 45);
+  }
   .max-w-50 {
     max-width: calc(var(--spacing) * 50);
   }
+  .max-w-57 {
+    max-width: calc(var(--spacing) * 57);
+  }
+  .max-w-57\.5 {
+    max-width: calc(var(--spacing) * 57.5);
+  }
   .max-w-full {
     max-width: 100%;
+  }
+  .min-w-15 {
+    min-width: calc(var(--spacing) * 15);
   }
   .border-collapse {
     border-collapse: collapse;
@@ -258,11 +286,17 @@
   .bg-\[\#8844ee\] {
     background-color: #8844ee;
   }
+  .bg-\[\#fafbfc\] {
+    background-color: #fafbfc;
+  }
   .bg-\[rgba\(0\,0\,0\,\.1\)\] {
     background-color: rgba(0,0,0,.1);
   }
   .bg-\[rgba\(0\,0\,01\)\] {
     background-color: rgba(0,0,01);
+  }
+  .bg-white {
+    background-color: var(--color-white);
   }
   .bg-\[linear-gradient\(135deg\,\#8844ee\,\#b07dfb\)\] {
     background-image: linear-gradient(135deg,#8844ee,#b07dfb);
@@ -272,6 +306,9 @@
   }
   .p-2\.5 {
     padding: calc(var(--spacing) * 2.5);
+  }
+  .p-5 {
+    padding: calc(var(--spacing) * 5);
   }
   .p-7 {
     padding: calc(var(--spacing) * 7);
@@ -291,6 +328,14 @@
   .underline {
     text-decoration-line: underline;
   }
+  .shadow-\[5px_5px_15px_0px\] {
+    --tw-shadow: 5px 5px 15px 0px var(--tw-shadow-color, currentcolor);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-\[5px_5px_15px_0px_rgba\(\#44\,44\,44\,0\.15\)\] {
+    --tw-shadow: 5px 5px 15px 0px var(--tw-shadow-color, rgba(#44,44,44,0.15));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
   .outline {
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
@@ -305,9 +350,32 @@
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
+  .duration-75 {
+    --tw-duration: 75ms;
+    transition-duration: 75ms;
+  }
   .duration-100 {
     --tw-duration: 100ms;
     transition-duration: 100ms;
+  }
+  .duration-200 {
+    --tw-duration: 200ms;
+    transition-duration: 200ms;
+  }
+  .duration-500 {
+    --tw-duration: 500ms;
+    transition-duration: 500ms;
+  }
+  .duration-1000 {
+    --tw-duration: 1000ms;
+    transition-duration: 1000ms;
+  }
+  .hover\:bg-\[\#b07dfb\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #b07dfb;
+      }
+    }
   }
   .hover\:bg-\[rgba\(0\,0\,0\,\.5\)\] {
     &:hover {
@@ -316,9 +384,24 @@
       }
     }
   }
+  .\[\&_a\]\:m-\[0_auto_30px_auto\] {
+    & a {
+      margin: 0 auto 30px auto;
+    }
+  }
   .\[\&_a\]\:block {
     & a {
       display: block;
+    }
+  }
+  .\[\&_a\]\:max-w-45 {
+    & a {
+      max-width: calc(var(--spacing) * 45);
+    }
+  }
+  .\[\&_a\]\:min-w-15 {
+    & a {
+      min-width: calc(var(--spacing) * 15);
     }
   }
   .\[\&_a\]\:rounded-\[5px\] {
@@ -331,9 +414,19 @@
       background-color: rgba(0,0,0,.1);
     }
   }
+  .\[\&_a\]\:bg-white {
+    & a {
+      background-color: var(--color-white);
+    }
+  }
   .\[\&_a\]\:p-2\.5 {
     & a {
       padding: calc(var(--spacing) * 2.5);
+    }
+  }
+  .\[\&_a\]\:p-5 {
+    & a {
+      padding: calc(var(--spacing) * 5);
     }
   }
   .\[\&_a\]\:text-\[1\.125em\] {
@@ -344,6 +437,18 @@
   .\[\&_a\]\:text-white {
     & a {
       color: var(--color-white);
+    }
+  }
+  .\[\&_a\]\:shadow-\[5px_5px_15px_0px_rgba\(\#44\,44\,44\,0\.15\)\] {
+    & a {
+      --tw-shadow: 5px 5px 15px 0px var(--tw-shadow-color, rgba(#44,44,44,0.15));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+    }
+  }
+  .\[\&_a\]\:shadow-\[5px_5px_15px_0px_rgba\(44\,44\,44\,0\.15\)\] {
+    & a {
+      --tw-shadow: 5px 5px 15px 0px var(--tw-shadow-color, rgba(44,44,44,0.15));
+      box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
     }
   }
   .\[\&_a\]\:transition-colors {
@@ -357,6 +462,21 @@
     & a {
       --tw-duration: 100ms;
       transition-duration: 100ms;
+    }
+  }
+  .\[\&_a\]\:duration-500 {
+    & a {
+      --tw-duration: 500ms;
+      transition-duration: 500ms;
+    }
+  }
+  .\[\&_a\]\:hover\:bg-\[\#b07dfb\] {
+    & a {
+      &:hover {
+        @media (hover: hover) {
+          background-color: #b07dfb;
+        }
+      }
     }
   }
   .\[\&_a\]\:hover\:bg-\[rgba\(0\,0\,0\,\.5\)\] {
@@ -374,6 +494,71 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-inset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-shadow-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-shadow-alpha {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+@property --tw-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-inset-ring-color {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-inset-ring-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
+@property --tw-ring-inset {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-ring-offset-width {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+@property --tw-ring-offset-color {
+  syntax: "*";
+  inherits: false;
+  initial-value: #fff;
+}
+@property --tw-ring-offset-shadow {
+  syntax: "*";
+  inherits: false;
+  initial-value: 0 0 #0000;
+}
 @property --tw-outline-style {
   syntax: "*";
   inherits: false;
@@ -387,6 +572,20 @@
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
+      --tw-shadow: 0 0 #0000;
+      --tw-shadow-color: initial;
+      --tw-shadow-alpha: 100%;
+      --tw-inset-shadow: 0 0 #0000;
+      --tw-inset-shadow-color: initial;
+      --tw-inset-shadow-alpha: 100%;
+      --tw-ring-color: initial;
+      --tw-ring-shadow: 0 0 #0000;
+      --tw-inset-ring-color: initial;
+      --tw-inset-ring-shadow: 0 0 #0000;
+      --tw-ring-inset: initial;
+      --tw-ring-offset-width: 0px;
+      --tw-ring-offset-color: #fff;
+      --tw-ring-offset-shadow: 0 0 #0000;
       --tw-outline-style: solid;
       --tw-duration: initial;
     }
