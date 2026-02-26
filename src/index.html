@@ -6,14 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wildbeast</title>
   <meta name="description" content="Projeto Wildbeast da Origamid, o projeto original é um curso de grid, entretanto, nesse meu caso farei todo o projeto com tailwind, visto que é a tecnologia que eu já estou estudando.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Volkhov:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/src/output.css">
 </head>
 
 <body>
 
-  <div>
+  <div class="grid grid-cols-[minmax(160px,1fr)_3fr_300px]">
 
-    <header>
+    <header class="col-span-full">
       <a href="#"> <img src="/src/img/wildbeast.svg" alt="Wildbeast"> </a>
       <nav>
         <ul>
@@ -24,7 +27,7 @@
       </nav>
     </header>
 
-    <nav>
+    <nav class="col-start-1">
       <ul>
         <li> <a href="#"> <img src="/src/img/icones/cervo.svg" alt="Cervo"> </a> </li>
         <li> <a href="#"> <img src="/src/img/icones/leao.svg" alt="Leão"> </a> </li>
@@ -35,7 +38,7 @@
       </ul>
     </nav>
 
-    <main>
+    <main class="col-start-2">
       <div>
         <h1>Lobo Cinza </h1>
         <span>da família canis lupus</span>
@@ -86,7 +89,7 @@
 
     </main>
 
-    <aside>
+    <aside class="col-start-3">
       <div>
         <img src="/src/img/anuncio-1.jpg" alt="Anuncio 1">
       </div>
@@ -95,7 +98,7 @@
       </div>
     </aside>
 
-    <footer>
+    <footer class="col-span-full">
       <p>Origamid @ 2012 - 2017. Alguns direitos reservados.</p>
     </footer>
 

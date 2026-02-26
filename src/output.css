@@ -1,4 +1,5 @@
 /*! tailwindcss v4.2.1 | MIT License | https://tailwindcss.com */
+@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
@@ -158,4 +159,88 @@
     display: none !important;
   }
 }
-@layer utilities;
+@layer utilities {
+  .col-span-1 {
+    grid-column: span 1 / span 1;
+  }
+  .col-span-2 {
+    grid-column: span 2 / span 2;
+  }
+  .col-span-3 {
+    grid-column: span 3 / span 3;
+  }
+  .col-span-full {
+    grid-column: 1 / -1;
+  }
+  .col-start-1 {
+    grid-column-start: 1;
+  }
+  .col-start-2 {
+    grid-column-start: 2;
+  }
+  .col-start-3 {
+    grid-column-start: 3;
+  }
+  .row-span-3 {
+    grid-row: span 3 / span 3;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .table {
+    display: table;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
+  }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .grid-cols-\[minmax\(160px\,1fr\)_1fr_1fr\] {
+    grid-template-columns: minmax(160px,1fr) 1fr 1fr;
+  }
+  .grid-cols-\[minmax\(160px\,1fr\)_1fr_300px\] {
+    grid-template-columns: minmax(160px,1fr) 1fr 300px;
+  }
+  .grid-cols-\[minmax\(160px\,1fr\)_3fr_300px\] {
+    grid-template-columns: minmax(160px,1fr) 3fr 300px;
+  }
+  .grid-cols-\[minmax\(160px_1fr\)_1fr_1fr\] {
+    grid-template-columns: minmax(160px 1fr) 1fr 1fr;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+      --tw-outline-style: solid;
+    }
+  }
+}
