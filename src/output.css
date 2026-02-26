@@ -10,6 +10,7 @@
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-3xl: 48rem;
+    --container-4xl: 56rem;
     --default-transition-duration: 150ms;
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
@@ -186,8 +187,20 @@
   .col-start-3 {
     grid-column-start: 3;
   }
+  .row-span-2 {
+    grid-row: span 2 / span 2;
+  }
   .row-span-3 {
     grid-row: span 3 / span 3;
+  }
+  .row-span-\[3\/5\] {
+    grid-row: span 3/5 / span 3/5;
+  }
+  .row-start-3 {
+    grid-row-start: 3;
+  }
+  .row-end-5 {
+    grid-row-end: 5;
   }
   .m-\[0\,auto\,30px\,auto\] {
     margin: 0,auto,30px,auto;
@@ -212,6 +225,9 @@
   }
   .max-w-3xl {
     max-width: var(--container-3xl);
+  }
+  .max-w-4xl {
+    max-width: var(--container-4xl);
   }
   .max-w-25 {
     max-width: calc(var(--spacing) * 25);
@@ -239,6 +255,9 @@
   }
   .resize {
     resize: both;
+  }
+  .grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -278,6 +297,9 @@
   }
   .gap-7\.5 {
     gap: calc(var(--spacing) * 7.5);
+  }
+  .self-end {
+    align-self: flex-end;
   }
   .rounded-\[5px\] {
     border-radius: 5px;
