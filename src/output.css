@@ -8,6 +8,7 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-amber-500: oklch(76.9% 0.188 70.08);
+    --color-amber-950: oklch(27.9% 0.077 45.635);
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-3xl: 48rem;
@@ -213,6 +214,12 @@
   .table {
     display: table;
   }
+  .max-h-full {
+    max-height: 100%;
+  }
+  .w-full {
+    width: 100%;
+  }
   .max-w-3 {
     max-width: calc(var(--spacing) * 3);
   }
@@ -225,8 +232,17 @@
   .max-w-50 {
     max-width: calc(var(--spacing) * 50);
   }
+  .max-w-125 {
+    max-width: calc(var(--spacing) * 125);
+  }
+  .max-w-\[16em\] {
+    max-width: 16em;
+  }
   .max-w-full {
     max-width: 100%;
+  }
+  .max-w-none {
+    max-width: none;
   }
   .border-collapse {
     border-collapse: collapse;
@@ -264,15 +280,31 @@
   .self-end {
     align-self: flex-end;
   }
+  .self-start {
+    align-self: flex-start;
+  }
   .rounded-\[0_0_5px_5px\] {
     border-radius: 0 0 5px 5px;
+  }
+  .rounded-\[5px\] {
+    border-radius: 5px;
   }
   .border {
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-b-2 {
+    border-bottom-style: var(--tw-border-style);
+    border-bottom-width: 2px;
+  }
+  .border-\[\#b07dfb\] {
+    border-color: #b07dfb;
+  }
   .bg-\[\#fafbfc\] {
     background-color: #fafbfc;
+  }
+  .bg-amber-950 {
+    background-color: var(--color-amber-950);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -313,6 +345,15 @@
   .text-\[0\.875em\] {
     font-size: 0.875em;
   }
+  .text-\[0\.875em\]\! {
+    font-size: 0.875em !important;
+  }
+  .text-\[1\.5em\] {
+    font-size: 1.5em;
+  }
+  .text-\[1\.5em\]\! {
+    font-size: 1.5em !important;
+  }
   .text-\[3\.75em\] {
     font-size: 3.75em;
   }
@@ -342,14 +383,24 @@
   .text-\[\#b07dfb\] {
     color: #b07dfb;
   }
+  .text-\[\#b07dfb\]\! {
+    color: #b07dfb !important;
+  }
   .text-white {
     color: var(--color-white);
+  }
+  .text-white\! {
+    color: var(--color-white) !important;
   }
   .italic {
     font-style: italic;
   }
   .underline {
     text-decoration-line: underline;
+  }
+  .shadow-\[5px_5px_15px_0px_rgba\(44\,44\,44\,0\.15\)\] {
+    --tw-shadow: 5px 5px 15px 0px var(--tw-shadow-color, rgba(44,44,44,0.15));
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .outline {
     outline-style: var(--tw-outline-style);
@@ -484,6 +535,26 @@
       border-radius: 5px;
     }
   }
+  .\[\&_li\]\:p-3\.75 {
+    & li {
+      padding: calc(var(--spacing) * 3.75);
+    }
+  }
+  .\[\&_li\]\:font-\[Courier\] {
+    & li {
+      font-family: Courier;
+    }
+  }
+  .\[\&_li\]\:text-\[1\.125em\] {
+    & li {
+      font-size: 1.125em;
+    }
+  }
+  .\[\&_li\]\:text-white {
+    & li {
+      color: var(--color-white);
+    }
+  }
   .\[\&_p\]\:bg-amber-500 {
     & p {
       background-color: var(--color-amber-500);
@@ -550,11 +621,6 @@
   syntax: "*";
   inherits: false;
 }
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
 @property --tw-shadow {
   syntax: "*";
   inherits: false;
@@ -620,6 +686,11 @@
   inherits: false;
   initial-value: 0 0 #0000;
 }
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
 @property --tw-duration {
   syntax: "*";
   inherits: false;
@@ -631,7 +702,6 @@
       --tw-leading: initial;
       --tw-font-weight: initial;
       --tw-tracking: initial;
-      --tw-outline-style: solid;
       --tw-shadow: 0 0 #0000;
       --tw-shadow-color: initial;
       --tw-shadow-alpha: 100%;
@@ -646,6 +716,7 @@
       --tw-ring-offset-width: 0px;
       --tw-ring-offset-color: #fff;
       --tw-ring-offset-shadow: 0 0 #0000;
+      --tw-outline-style: solid;
       --tw-duration: initial;
     }
   }
