@@ -261,6 +261,9 @@
   .flex-wrap {
     flex-wrap: wrap;
   }
+  .content-start {
+    align-content: flex-start;
+  }
   .items-center {
     align-items: center;
   }
@@ -315,6 +318,9 @@
   }
   .p-7\.5 {
     padding: calc(var(--spacing) * 7.5);
+  }
+  .text-center {
+    text-align: center;
   }
   .text-\[1\.125em\] {
     font-size: 1.125em;
@@ -486,6 +492,11 @@
           background-color: rgba(0,0,0,.5);
         }
       }
+    }
+  }
+  .\[\&_img\]\:rounded-\[5px\] {
+    & img {
+      border-radius: 5px;
     }
   }
 }
